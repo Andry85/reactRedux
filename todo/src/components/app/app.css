@@ -1,0 +1,9 @@
+.wrapper {
+    padding: 2rem;
+}
+.header {
+    padding: 0 0 1rem 0;
+    display: flex;
+    justify-content: space-between;
+
+}

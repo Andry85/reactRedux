@@ -1,0 +1,8 @@
+.todo-list-iten {
+    display: flex;
+    align-items: center;
+}
+.btn-outline-danger {
+    margin-left: auto;
+    margin-right: 10px;
+}
