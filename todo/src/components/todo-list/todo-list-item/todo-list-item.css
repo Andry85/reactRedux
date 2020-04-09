@@ -1,8 +1,18 @@
-.todo-list-iten {
+.todo-list-item {
     display: flex;
     align-items: center;
 }
 .btn-outline-danger {
     margin-left: auto;
     margin-right: 10px;
+}
+
+.todo-list-item.done {
+    text-decoration: line-through;
+}
+
+.todo-list-item.important {
+    text-decoration: line-through;
+    font-weight: bold;
+    color: blueviolet;
 }

@@ -1,0 +1,11 @@
+.btn--add-item {
+    margin-left: 20px;
+}
+
+.item-add-form {
+    padding: 25px 0 0 0;
+}
+.item-add-form input {
+    flex-grow: 1;
+    padding: 0 5px;
+}
