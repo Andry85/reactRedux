@@ -30,7 +30,7 @@ export default class TodoAddItem extends Component {
                        value={this.state.label}
                        placeholder="What needs to be done" />
 
-                <button type="button"
+                <button type="submit"
                         className="btn btn-primary btn--add-item">
                     Add Item
                 </button>
