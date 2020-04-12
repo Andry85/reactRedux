@@ -9,8 +9,6 @@ const TodoList = ({ todos, onDeleted, onToggleImportant, onToggleDone}) => {
 
     const elements = todos.map((item) =>{
 
-        console.log(item);
-
         const {id, ...itemProps} = item;
 
         return (

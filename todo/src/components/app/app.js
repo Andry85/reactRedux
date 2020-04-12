@@ -18,12 +18,12 @@ export default  class App extends Component {
             this.createTodoItem('Have a lunch')
         ],
         term: '',
-        filter: 'all' // active, all, done
+        filter: '' // active, all, done
     };
 
     createTodoItem(label) {
         return {
-            label,
+            label: label,
             important: false,
             done: false,
             id: this.maxId++
@@ -45,18 +45,22 @@ export default  class App extends Component {
     };
 
     addItem = (text) => {
-       const newItem = this.createTodoItem(text);
 
-       this.setState(({toDoData}) => {
-            const newArr = [
-                ...toDoData,
-                newItem
-            ];
+        if (text !== '') {
 
-           return {
-               toDoData: newArr
-           };
-       });
+            const newItem = this.createTodoItem(text);
+            this.setState(({toDoData}) => {
+                 const newArr = [
+                     ...toDoData,
+                     newItem
+                 ];
+     
+                return {
+                    toDoData: newArr
+                };
+            });
+        }
+      
     };
 
 
@@ -64,9 +68,8 @@ export default  class App extends Component {
         const idx = arr.findIndex((el) => el.id === id);
 
         const oldItem = arr[idx];
-        console.log(oldItem);
+
         const newItem = {...oldItem, [propName]: !oldItem[propName]};
-        console.log(newItem);
 
         return [
             ...arr.slice(0, idx),
@@ -93,14 +96,11 @@ export default  class App extends Component {
     };
 
     onSearch = (items, term) => {
-        if (term.length == 0) {
+        if (term.length === 0) {
             return items;
         }
 
-
-        return items.filter((item) => item.label.toLowerCase().indexOf(term.toLowerCase()) > -1);
-           
-
+        return items.filter((item) => item.label.toLowerCase().indexOf(term.toLowerCase()) > -1);   
     }
     onSearchChange = (term) => {
         this.setState({term});
